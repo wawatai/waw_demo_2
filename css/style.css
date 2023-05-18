@@ -1,0 +1,1133 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "微軟正黑體";
+}
+
+ol, ul {
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0px;
+  font-family: "微軟正黑體";
+}
+
+select, input {
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "微軟正黑體";
+}
+
+main {
+  display: block;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: #0a102e;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+html body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+html body::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 30px;
+}
+html body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+html body header {
+  width: 100%;
+  min-width: 1100px;
+  height: 90px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+}
+html body header.scroll {
+  position: fixed;
+}
+html body header article {
+  width: 90%;
+  height: 100%;
+  margin: 0px auto;
+  position: relative;
+}
+html body header article .inputBox {
+  width: auto;
+  height: auto;
+  float: left;
+  margin-top: 25px;
+  position: relative;
+  z-index: 2;
+}
+html body header article .inputBox:hover input, html body header article .inputBox:active input, html body header article .inputBox.active input {
+  width: 300px;
+  padding: 0px 60px 0px 20px;
+  background: #ffffff;
+  color: #202342;
+}
+html body header article .inputBox:hover input::-webkit-input-placeholder, html body header article .inputBox:active input::-webkit-input-placeholder, html body header article .inputBox.active input::-webkit-input-placeholder {
+  color: #202342;
+}
+html body header article .inputBox:hover input::-moz-placeholder, html body header article .inputBox:active input::-moz-placeholder, html body header article .inputBox.active input::-moz-placeholder {
+  color: #202342;
+}
+html body header article .inputBox:hover input:-ms-input-placeholder, html body header article .inputBox:active input:-ms-input-placeholder, html body header article .inputBox.active input:-ms-input-placeholder {
+  color: #202342;
+}
+html body header article .inputBox:hover input::-ms-input-placeholder, html body header article .inputBox:active input::-ms-input-placeholder, html body header article .inputBox.active input::-ms-input-placeholder {
+  color: #202342;
+}
+html body header article .inputBox:hover input::placeholder, html body header article .inputBox:active input::placeholder, html body header article .inputBox.active input::placeholder {
+  color: #202342;
+}
+html body header article .inputBox:hover span, html body header article .inputBox:active span, html body header article .inputBox.active span {
+  background: #1f69f0;
+  left: 84%;
+}
+html body header article .inputBox input {
+  width: 105px;
+  height: 40px;
+  background: #2d325a;
+  border-radius: 50px;
+  border: none;
+  padding-left: 60px;
+  font-size: 15px;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+  color: #ffffff;
+  -webkit-box-shadow: 0px 0px 8px 0px #00000045;
+          box-shadow: 0px 0px 8px 0px #00000045;
+}
+html body header article .inputBox input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+html body header article .inputBox input::-moz-placeholder {
+  color: #ffffff;
+}
+html body header article .inputBox input:-ms-input-placeholder {
+  color: #ffffff;
+}
+html body header article .inputBox input::-ms-input-placeholder {
+  color: #ffffff;
+}
+html body header article .inputBox input::placeholder {
+  color: #ffffff;
+}
+html body header article .inputBox span {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 100%;
+  background: #374183;
+  -webkit-box-shadow: 0px 0px 8px 0px #00000045;
+          box-shadow: 0px 0px 8px 0px #00000045;
+  border-radius: 50px;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
+  text-align: center;
+  left: 0px;
+  cursor: pointer;
+}
+html body header article .inputBox span i {
+  line-height: 40px;
+  font-size: 24px;
+  color: #ffffff;
+}
+html body header article .btnBox {
+  float: right;
+  width: auto;
+  height: auto;
+  margin: 25px 10px 0px 0px;
+  position: relative;
+  z-index: 6;
+}
+html body header article .btnBox:nth-of-type(2) {
+  margin-right: 0px;
+}
+html body header article .btnBox:hover button::before, html body header article .btnBox:active button::before, html body header article .btnBox.active button::before {
+  opacity: 1;
+  width: 100%;
+}
+html body header article .btnBox button {
+  width: auto;
+  height: 40px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  border-radius: 30px;
+  background: #313a75;
+  padding: 0px 15px;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+html body header article .btnBox button::before {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(16%, #ed47f3), color-stop(60%, #8a5efa), color-stop(96%, #15bde7));
+  background: linear-gradient(to right, #ed47f3 16%, #8a5efa 60%, #15bde7 96%);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: -1;
+}
+html body header article .btnBox button i {
+  font-size: 28px;
+  color: #ffffff;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+html body header article .btnBox button span {
+  vertical-align: super;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 14px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  padding-left: 8px;
+}
+html body header article .logo {
+  width: 224px;
+  height: 100%;
+  margin: 0px auto;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+html body header article .logo div {
+  position: absolute;
+  width: 100%;
+  height: 72px;
+  background: url("../images/logo.png") no-repeat;
+  background-size: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+html body main {
+  width: 100%;
+  min-width: 1100px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html body main .mainBox {
+  width: 90%;
+  height: 100%;
+  margin: 0px auto;
+  padding-top: 120px;
+}
+html body main .mainBox.web .forWeb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+html body main .mainBox.web .forWeb li {
+  width: 23%;
+  height: 0px;
+  margin: 0px 15px 50px;
+  padding-bottom: 16%;
+}
+html body main .mainBox.web .forWeb li.hoverA a {
+  top: 35%;
+}
+html body main .mainBox.web .forWeb li:hover h1, html body main .mainBox.web .forWeb li:active h1, html body main .mainBox.web .forWeb li.active h1 {
+  height: 60%;
+}
+html body main .mainBox.web .forWeb li:hover h1 p, html body main .mainBox.web .forWeb li:active h1 p, html body main .mainBox.web .forWeb li.active h1 p {
+  top: 20%;
+}
+html body main .mainBox.web .forWeb li:hover h1 a:nth-of-type(1), html body main .mainBox.web .forWeb li:active h1 a:nth-of-type(1), html body main .mainBox.web .forWeb li.active h1 a:nth-of-type(1) {
+  left: 25%;
+}
+html body main .mainBox.web .forWeb li:hover h1 a:nth-of-type(2), html body main .mainBox.web .forWeb li:active h1 a:nth-of-type(2), html body main .mainBox.web .forWeb li.active h1 a:nth-of-type(2) {
+  right: 25%;
+}
+html body main .mainBox.web .forWeb li h1 {
+  height: 20%;
+}
+html body main .mainBox.web .forWeb li h1 a:nth-of-type(1) {
+  left: 5%;
+}
+html body main .mainBox.web .forWeb li h1 a:nth-of-type(2) {
+  right: 5%;
+}
+html body main .mainBox.web .forWeb s {
+  width: 23%;
+  margin: 0px 15px;
+}
+html body main .mainBox.mobile .forMobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+html body main .mainBox.mobile .forMobile li {
+  width: 14%;
+  height: 0px;
+  padding-bottom: 27%;
+  margin: 0px 15px 50px;
+}
+html body main .mainBox.mobile .forMobile li.hoverA a:nth-of-type(1) {
+  top: 15%;
+  left: 25%;
+}
+html body main .mainBox.mobile .forMobile li.hoverA a:nth-of-type(2) {
+  top: 45%;
+  right: 25%;
+}
+html body main .mainBox.mobile .forMobile li:hover h1, html body main .mainBox.mobile .forMobile li:active h1, html body main .mainBox.mobile .forMobile li.active h1 {
+  height: 70%;
+}
+html body main .mainBox.mobile .forMobile li:hover h1 p, html body main .mainBox.mobile .forMobile li:active h1 p, html body main .mainBox.mobile .forMobile li.active h1 p {
+  top: 90%;
+}
+html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1), html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1), html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1) {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1):hover, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1):active, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(1).active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1):hover, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1):active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(1).active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1):hover, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1):active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(1).active {
+  -webkit-transform: scale(1.2) translateX(-42%);
+          transform: scale(1.2) translateX(-42%);
+}
+html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2), html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2), html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2) {
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2):hover, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2):active, html body main .mainBox.mobile .forMobile li:hover h1 a:nth-of-type(2).active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2):hover, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2):active, html body main .mainBox.mobile .forMobile li:active h1 a:nth-of-type(2).active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2):hover, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2):active, html body main .mainBox.mobile .forMobile li.active h1 a:nth-of-type(2).active {
+  -webkit-transform: scale(1.2) translateX(42%);
+          transform: scale(1.2) translateX(42%);
+}
+html body main .mainBox.mobile .forMobile li h1 {
+  height: 10%;
+}
+html body main .mainBox.mobile .forMobile s {
+  width: 18%;
+  margin: 0px 15px;
+}
+html body main .mainBox ul {
+  display: none;
+  width: auto;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+html body main .mainBox ul li {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 2px 8px 0px #0000004d;
+          box-shadow: 0px 2px 8px 0px #0000004d;
+}
+html body main .mainBox ul li:hover .img, html body main .mainBox ul li:active .img, html body main .mainBox ul li.active .img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+html body main .mainBox ul li:hover .img::before, html body main .mainBox ul li:active .img::before, html body main .mainBox ul li.active .img::before {
+  opacity: 1;
+}
+html body main .mainBox ul li:hover h1, html body main .mainBox ul li:active h1, html body main .mainBox ul li.active h1 {
+  background-color: #f2cd37;
+  width: 110%;
+  border-radius: 100% 100% 0% 0%;
+}
+html body main .mainBox ul li:hover h1 p, html body main .mainBox ul li:active h1 p, html body main .mainBox ul li.active h1 p {
+  color: #ffffff;
+}
+html body main .mainBox ul li:hover h1 a, html body main .mainBox ul li:active h1 a, html body main .mainBox ul li.active h1 a {
+  opacity: 1;
+  pointer-events: all;
+}
+html body main .mainBox ul li .img {
+  width: 100%;
+  height: 100%;
+  font-size: 0px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+html body main .mainBox ul li .img::before {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+html body main .mainBox ul li h1 {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  background: #ffffff;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  overflow: hidden;
+}
+html body main .mainBox ul li h1 p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #33853b;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+html body main .mainBox ul li h1 a {
+  opacity: 0;
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 10px 20px 0px #0000004d;
+          box-shadow: 0px 10px 20px 0px #0000004d;
+  border-radius: 50px;
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+html body main .mainBox ul li h1 a:hover, html body main .mainBox ul li h1 a:active, html body main .mainBox ul li h1 a.active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+html body main .mainBox ul li h1 a:hover i, html body main .mainBox ul li h1 a:active i, html body main .mainBox ul li h1 a.active i {
+  -webkit-animation: shakeI 1s linear 0s infinite;
+          animation: shakeI 1s linear 0s infinite;
+}
+html body main .mainBox ul li h1 a i {
+  color: #33853b;
+  line-height: 80px;
+  font-size: 40px;
+}
+html body main .mainBox ul s:nth-of-type(1) {
+  display: none;
+}
+html body main .gotop {
+  display: none;
+  background: #ffffff;
+  border: solid 2px #828282;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  position: fixed;
+  right: 10px;
+  bottom: 3%;
+  text-align: center;
+}
+html body main .gotop i {
+  font-size: 30px;
+  color: #41515d;
+  line-height: 45px;
+}
+html body .bg {
+  position: fixed;
+  width: 100%;
+  min-width: 1100px;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(135deg, #020409 25%, #212750 100%);
+  background-size: cover;
+  z-index: -999;
+}
+html body .hideBar {
+  display: none;
+  position: fixed;
+  min-width: 1100px;
+  width: 100%;
+  height: 120px;
+  background: url("../images/bg.jpg") no-repeat top center;
+  background-size: cover;
+  z-index: 3;
+  top: 0px;
+  left: 0px;
+}
+html body .hideBar.display {
+  display: block;
+}
+html body .mainAnime {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #0a102e;
+}
+html body .mainAnime #c {
+  position: absolute;
+  z-index: 1;
+  -webkit-animation: stop 3s linear 0s, starJump 5s ease-out 3s;
+          animation: stop 3s linear 0s, starJump 5s ease-out 3s;
+}
+html body .mainAnime #canvas {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-animation: stop 4.5s linear 0s, ballJump 1s ease-out 4.5s;
+          animation: stop 4.5s linear 0s, ballJump 1s ease-out 4.5s;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+html body .mainAnime .flyDebris {
+  width: 1850px;
+  height: 1850px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border-radius: 50%;
+  -webkit-animation: around2 4s ease-in 5.5s infinite;
+          animation: around2 4s ease-in 5.5s infinite;
+  -webkit-transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
+          transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+html body .mainAnime .flyDebris .innerBox {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+html body .mainAnime .flyDebris .innerBox span {
+  position: absolute;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px #ffffff80;
+          box-shadow: 0px 0px 10px #ffffff80;
+  -webkit-animation: innerRound 0s linear 0s infinite;
+          animation: innerRound 0s linear 0s infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+html body .mainAnime figure {
+  width: 80%;
+  height: 25%;
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+html body .mainAnime figure svg > * {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+html body .mainAnime button {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  margin-top: 20%;
+  padding: 20px 10px 20px 20px;
+  -webkit-transition: 0.3s scale;
+  transition: 0.3s scale;
+  background: transparent;
+  letter-spacing: 10px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  -webkit-animation: stop 3s linear 0s, btnJump 0.3s ease-out 3s;
+          animation: stop 3s linear 0s, btnJump 0.3s ease-out 3s;
+}
+html body .mainAnime button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+html body .mainAnime button.display {
+  display: block;
+}
+html body .mainAnime button p {
+  position: absolute;
+  background: #ffffff;
+}
+html body .mainAnime button p:nth-of-type(1) {
+  width: calc(100% + 8px);
+  height: 4px;
+  top: -4px;
+  left: -4px;
+  -webkit-animation: stop 3.5s linear 0s, line1 0.2s linear 3.5s;
+          animation: stop 3.5s linear 0s, line1 0.2s linear 3.5s;
+}
+html body .mainAnime button p:nth-of-type(2) {
+  width: 4px;
+  height: calc(100% + 8px);
+  top: -4px;
+  right: -4px;
+  -webkit-animation: stop 3.7s linear 0s, line2 0.2s linear 3.7s;
+          animation: stop 3.7s linear 0s, line2 0.2s linear 3.7s;
+}
+html body .mainAnime button p:nth-of-type(3) {
+  width: calc(100% + 8px);
+  height: 4px;
+  bottom: -4px;
+  right: -4px;
+  -webkit-animation: stop 3.9s linear 0s, line1 0.2s linear 3.9s;
+          animation: stop 3.9s linear 0s, line1 0.2s linear 3.9s;
+}
+html body .mainAnime button p:nth-of-type(4) {
+  width: 4px;
+  height: calc(100% + 8px);
+  bottom: -4px;
+  left: -4px;
+  -webkit-animation: stop 4.1s linear 0s, line2 0.2s linear 4.1s;
+          animation: stop 4.1s linear 0s, line2 0.2s linear 4.1s;
+}
+html body .mainAnime .loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: #0a102e;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+html body .mainAnime .loading div {
+  position: absolute;
+  font-size: 30px;
+  opacity: 0;
+  -webkit-animation: move 2s linear infinite;
+          animation: move 2s linear infinite;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: #35C4F0;
+}
+html body .mainAnime .loading div:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+html body .mainAnime .loading div:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+html body .mainAnime .loading div:nth-child(4) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+html body .mainAnime .loading div:nth-child(5) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+html body .mainAnime .loading div:nth-child(6) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+html body .mainAnime .loading div:nth-child(7) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 100;
+}
+
+@media screen and (max-width: 1670px) {
+  html body main .mainBox.web .forWeb li {
+    width: 22%;
+    padding-bottom: 15%;
+  }
+  html body main .mainBox.web .forWeb li h1 a {
+    width: 70px;
+    height: 70px;
+  }
+  html body main .mainBox.web .forWeb li h1 a i {
+    font-size: 36px;
+    line-height: 70px;
+  }
+  html body main .mainBox.web .forWeb s {
+    width: 22%;
+  }
+  html body main .mainBox.mobile .forMobile li {
+    width: 17%;
+    padding-bottom: 33%;
+  }
+  html body main .mainBox.mobile .forMobile s {
+    width: 17%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  html body main .mainBox.web .forWeb li {
+    width: 28%;
+    padding-bottom: 18%;
+  }
+  html body main .mainBox.web .forWeb li h1 a {
+    width: 75px;
+    height: 75px;
+  }
+  html body main .mainBox.web .forWeb li h1 a i {
+    font-size: 36px;
+    line-height: 75px;
+  }
+  html body main .mainBox.web .forWeb s {
+    width: 28%;
+  }
+  html body main .mainBox.mobile .forMobile li h1 a {
+    width: 70px;
+    height: 70px;
+  }
+  html body main .mainBox.mobile .forMobile li h1 a i {
+    font-size: 34px;
+    line-height: 70px;
+  }
+}
+@media screen and (max-width: 1290px) {
+  html body main .mainBox.web .forWeb li h1 a {
+    width: 65px;
+    height: 65px;
+  }
+  html body main .mainBox.web .forWeb li h1 a i {
+    font-size: 34px;
+    line-height: 65px;
+  }
+  html body main .mainBox.mobile .forMobile li h1 a {
+    width: 65px;
+    height: 65px;
+  }
+  html body main .mainBox.mobile .forMobile li h1 a i {
+    font-size: 34px;
+    line-height: 65px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  html body .mainAnime .svgWrapper {
+    width: 800px;
+  }
+  html body main .mainBox.web .forWeb {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  html body main .mainBox.web .forWeb li {
+    width: 40%;
+    padding-bottom: 25%;
+    margin: 0px 30px 50px;
+  }
+  html body main .mainBox.web .forWeb li h1 a {
+    width: 80px;
+    height: 80px;
+  }
+  html body main .mainBox.web .forWeb li h1 a i {
+    font-size: 40px;
+    line-height: 80px;
+  }
+  html body main .mainBox.web .forWeb s {
+    width: 40%;
+    margin: 0px 30px;
+  }
+  html body main .mainBox.mobile .forMobile li {
+    width: 21%;
+    padding-bottom: 37%;
+  }
+  html body main .mainBox.mobile .forMobile s {
+    width: 21%;
+  }
+}
+.fancybox-toolbar {
+  right: 15% !important;
+}
+.fancybox-toolbar button {
+  background: none !important;
+  padding: 0px !important;
+}
+
+.fancybox-navigation div {
+  padding: 0px !important;
+}
+.fancybox-navigation button {
+  padding: 0px !important;
+  background: none !important;
+}
+
+.fancybox-button--play {
+  display: none !important;
+}
+
+.fancybox-button--zoom:hover::before, .fancybox-button--zoom:hover::after, .fancybox-button--zoom:active::before, .fancybox-button--zoom:active::after, .fancybox-button--zoom.active::before, .fancybox-button--zoom.active::after {
+  background: #ffffff;
+}
+.fancybox-button--zoom::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 19px;
+  width: 2px;
+  height: 10px;
+  background: #ccc;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.fancybox-button--zoom::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 15px;
+  width: 10px;
+  height: 2px;
+  background: #ccc;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+@-webkit-keyframes shakeI {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes shakeI {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes around2 {
+  0% {
+    -webkit-transform: rotateX(55deg) rotateY(-25deg) rotateZ(0deg) rotate(-90deg);
+            transform: rotateX(55deg) rotateY(-25deg) rotateZ(0deg) rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(55deg) rotateY(-25deg) rotateZ(360deg) rotate(-90deg);
+            transform: rotateX(55deg) rotateY(-25deg) rotateZ(360deg) rotate(-90deg);
+  }
+}
+@keyframes around2 {
+  0% {
+    -webkit-transform: rotateX(55deg) rotateY(-25deg) rotateZ(0deg) rotate(-90deg);
+            transform: rotateX(55deg) rotateY(-25deg) rotateZ(0deg) rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(55deg) rotateY(-25deg) rotateZ(360deg) rotate(-90deg);
+            transform: rotateX(55deg) rotateY(-25deg) rotateZ(360deg) rotate(-90deg);
+  }
+}
+@-webkit-keyframes innerRound {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+            transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+@keyframes innerRound {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+            transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+@-webkit-keyframes ballJump {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  60% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes ballJump {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  60% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes starJump {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes starJump {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes stop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes stop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes line1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes line1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes line2 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes line2 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@-webkit-keyframes btnJump {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes btnJump {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes move {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  35% {
+    left: 41%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    left: 59%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    opacity: 0;
+  }
+}
+@keyframes move {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  35% {
+    left: 41%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    left: 59%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    opacity: 0;
+  }
+}
