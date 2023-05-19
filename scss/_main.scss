@@ -1,226 +1,45 @@
 html {
     width: 100%;
     height: 100%;
-    background: #0a102e;
+    background: $BG;
 
     body {
         width: 100%;
         height: 100%;
-        overflow: auto;
         position: relative;
-
-            &::-webkit-scrollbar {
-                width: 5px;
-                height: 5px;
-                background: transparent;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background: #333333;
-                border-radius: 30px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: #f1f1f1;
-            }
-
-        //header
-        header {
-            width: 100%;
-            min-width: 1100px;
-            height: 90px;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            z-index: 5;
-
-            &.scroll {
-                position: fixed;
-            }
-
-            article {
-                width: 90%;
-                height: 100%;
-                margin: 0px auto;
-                position: relative;
-
-                //search
-                .inputBox {
-                    width: auto;
-                    height: auto;
-                    float: left;
-                    margin-top: 25px;
-                    position: relative;
-                    z-index: 2;
-
-                    &:hover,&:active,&.active {
-                        
-                        input {
-                            width: 300px;
-                            padding: 0px 60px 0px 20px;
-                            background: #ffffff;
-                            color: #202342;
-
-                            &::placeholder {
-                                color: #202342;
-                            }
-                        }
-
-                        span {
-                            background: #1f69f0;
-                            left: 84%
-                        }
-                    }
-
-                    input {
-                        width: 105px;
-                        height: 40px;
-                        background: #2d325a;
-                        border-radius: 50px;
-                        border: none;
-                        padding-left: 60px;
-                        font-size: 15px;
-                        transition: 0.4s all;
-                        color: #ffffff;
-                        box-shadow: 0px 0px 8px 0px #00000045;
-
-                        &::placeholder {
-                            color: #ffffff;
-                        }
-                    }
-
-                    span {
-                        position: absolute;
-                        display: block;
-                        width: 50px;
-                        height: 100%;
-                        background: #374183;
-                        box-shadow: 0px 0px 8px 0px #00000045;
-                        border-radius: 50px;
-                        transition: 0.6s all;
-                        text-align: center;
-                        left: 0px;
-                        cursor: pointer; 
-
-                        i {
-                            line-height: 40px;
-                            font-size: 24px;
-                            color: #ffffff;
-                        }
-                    }
-                }
-
-                //切換按鈕
-                .btnBox {
-                    float: right;
-                    width: auto;
-                    height: auto;
-                    margin: 25px 10px 0px 0px;
-                    position: relative;
-                    z-index: 6;
-
-                    &:nth-of-type(2) {
-                        margin-right: 0px;
-                    }
-
-                    &:hover,&:active,&.active {
-                        
-                        button {
-                            
-                            &::before {
-                                opacity: 1;
-                                width: 100%;
-                            }
-                        }
-                    }
-
-                    button {
-                        width: auto;
-                        height: 40px;
-                        transition: 0.3s all;
-                        border-radius: 30px;
-                        background: #313a75;
-                        padding: 0px 15px;
-                        z-index: 1;
-                        position: relative;
-                        overflow: hidden;
-
-                        &::before {
-                            opacity: 0;
-                            content: "";
-                            position: absolute;
-                            top: 0px;
-                            left: 0px;
-                            width: 0%;
-                            height: 100%;
-                            background: linear-gradient(to right,#ed47f3 16%,#8a5efa 60%,#15bde7 96%);
-                            transition: 0.5s all;
-                            z-index: -1;
-                        }
-    
-                        i {
-                            font-size: 28px;
-                            color: #ffffff;
-                            transition: 0.3s all;
-                        }
-    
-                        span {
-                            vertical-align: super;
-                            color: #ffffff;
-                            letter-spacing: 1px;
-                            font-weight: bold;
-                            font-size: 14px;
-                            transition: 0.3s all;
-                            padding-left: 8px;
-                        }
-                    }
-                }
-
-                //logo
-                .logo {
-                    width: 224px;
-                    height: 100%;
-                    margin: 0px auto;
-                    cursor: pointer;
-                    position: relative;
-                    z-index: 3;
-
-                    div {
-                        position: absolute;
-                        width: 100%;
-                        height: 72px;
-                        background: url('../images/logo.png') no-repeat;
-                        background-size: 100%;
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-                }
-            }
-        }
+        overflow-y: hidden;
+        @include scrollBar_1;
 
         //main
         main {
             width: 100%;
-            min-width: 1100px;
+            min-width: 1000px;
             height: auto;
-            box-sizing: border-box;
 
             .mainBox {
                 width: 90%;
                 height: 100%;
-                margin: 0px auto;
                 padding-top: 120px;
+                margin: 0px auto;
 
-                &.web {
+                ul {
+                    display: none;
+                    width: auto;
+                    height: auto;
+                    gap: 50px 25px;
+                    overflow-y: auto;
+                    padding: 0 10px;
+                    @include scrollBar_1;
 
-                    .forWeb {
-                        display: flex;
+                    &.display {
+                        display: grid;
+                    }
+
+                    &.forWeb {
+                        grid-template-columns: repeat(4,1fr);
 
                         li {
-                            width: 23%;
-                            height: 0px;
-                            margin: 0px 15px 50px;
-                            padding-bottom: 16%;
+                            padding-bottom: 67%;
 
                             &.hoverA {
                                 
@@ -266,24 +85,13 @@ html {
                                 }
                             }
                         }
-
-                        s {
-                            width: 23%;
-                            margin: 0px 15px;
-                        }
                     }
-                }
 
-                &.mobile {
-
-                    .forMobile {
-                        display: flex;
+                    &.forMobile {
+                        grid-template-columns: repeat(6,1fr);
 
                         li {
-                            width: 14%;
-                            height: 0px;
-                            padding-bottom: 27%;
-                            margin: 0px 15px 50px;
+                            padding-bottom: 175%;
 
                             &.hoverA {
 
@@ -337,28 +145,15 @@ html {
                                 height: 10%;
                             }
                         }
-
-                        s {
-                            width: 18%;
-                            margin: 0px 15px;
-                        }
                     }
-                }
-
-                ul {
-                    display: none;
-                    width: auto;
-                    height: 100%;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    justify-content: space-around;
 
                     li {
-                        position: relative;
+                        height: 0;
                         border-radius: 10px;
+                        box-shadow: 0px 2px 8px 0px $mainShadow_1;
+                        position: relative;
                         overflow: hidden;
                         cursor: pointer;
-                        box-shadow: 0px 2px 8px 0px #0000004d;
 
                         &:hover,&:active,&.active {
 
@@ -371,12 +166,12 @@ html {
                             }
 
                             h1 {
-                                background-color: #f2cd37;
                                 width: 110%;
+                                background: $mainBG_1;
                                 border-radius: 100% 100% 0% 0%;
 
                                 p {
-                                    color: #ffffff;
+                                    color: $mainColor_1;
                                 }
 
                                 a {
@@ -404,43 +199,45 @@ html {
                                 left: 0px;
                                 width: 100%;
                                 height: 100%;
-                                background: #00000080;
+                                background: $mainShadow_1;
                                 transition: 0.3s all;
                             }
                         }
 
                         h1 {
-                            position: absolute;
                             width: 100%;
                             bottom: 0px;
-                            background: #ffffff;
-                            transition: 0.3s all;
+                            background: $mainBG_2;
+                            position: absolute;
                             left: 50%;
                             transform: translateX(-50%);
+                            transition: 0.3s all;
                             overflow: hidden;
 
                             p {
+                                color: $mainColor_2;
+                                font-size: 18px;
+                                font-weight: bold;
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
                                 transform: translate(-50%,-50%);
-                                font-size: 18px;
-                                font-weight: bold;
-                                color: #33853b;
                                 transition: 0.3s all;
                             }
 
                             a {
-                                opacity: 0;
                                 width: 80px;
                                 height: 80px;
-                                background: #ffffff;
-                                box-shadow: 0px 10px 20px 0px #0000004d;
+                                background: $mainBG_2;
+                                box-shadow: 0px 10px 20px 0px $mainShadow_1;
                                 border-radius: 50px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
                                 position: absolute;
-                                text-align: center;
                                 pointer-events: none;
                                 transition: 0.2s all;
+                                opacity: 0;
 
                                 &:hover,&:active,&.active {
                                     transform: scale(1.1);
@@ -451,18 +248,10 @@ html {
                                 }
 
                                 i {
-                                    color: #33853b;
-                                    line-height: 80px;
+                                    color: $mainIconColor_1;
                                     font-size: 40px;
                                 }
                             }
-                        }
-                    }
-
-                    s {
-
-                        &:nth-of-type(1) {
-                            display: none;
                         }
                     }
                 }
@@ -470,67 +259,46 @@ html {
 
             //回到頂端按鈕
             .gotop {
-                display: none;
-                background: #ffffff;
-                border: solid 2px #828282;
                 width: 50px;
                 height: 50px;
-                border-radius: 30px;
+                @include goTop;
                 position: fixed;
                 right: 10px;
                 bottom: 3%;
-                text-align: center;
 
                 i {
+                    color: $goTop_IconColor;
                     font-size: 30px;
-                    color: #41515d;
-                    line-height: 45px;
                 }
             }
         }
 
         //bg
         .bg {
-            position: fixed;
             width: 100%;
-            min-width: 1100px;
+            min-width: 1000px;
             height: 100%;
+            position: fixed;
             top: 0px;
             left: 0px;
-            background: linear-gradient(135deg,#020409 25%,#212750 100%);
+            background: $BG_under;
             background-size: cover;
             z-index: -999;
         }
 
-        //隱藏列
-        .hideBar {
-            display: none;
-            position: fixed;
-            min-width: 1100px;
-            width: 100%;
-            height: 120px;
-            background: url('../images/bg.jpg') no-repeat top center;
-            background-size: cover;
-            z-index: 3;
-            top: 0px;
-            left: 0px;
-
-            &.display {
-                display: block;
-            }
-        }
-
         //入場動畫
         .mainAnime {
-            position: fixed;
             width: 100%;
             height: 100%;
-            z-index: 100;
-            overflow: hidden;
+            background: $BG;
+            position: fixed;
+            top: 0;
+            left: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #0a102e;
+            overflow: hidden;
+            z-index: 100;
 
             #c {
                 position: absolute;
@@ -551,8 +319,6 @@ html {
                 height: 1850px;
                 transform-style: preserve-3d;
                 border-radius: 50%;
-                // border: solid 5px #ffffff;
-                // box-shadow: 3px 3px 50px 0px #ffffff;
                 animation: around2 4s ease-in 5.5s infinite;
                 transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
                 position: absolute;
@@ -563,9 +329,9 @@ html {
                     transform: rotate(45deg);
 
                     span {
+                        background: $mainBG_2;
+                        box-shadow: 0px 0px 10px $mainShadow_2;
                         position: absolute;
-                        background: #ffffff;
-                        box-shadow: 0px 0px 10px #ffffff80;
                         animation: innerRound 0s linear 0s infinite;
                         animation-duration: 10s;
                         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -582,24 +348,24 @@ html {
                 pointer-events: none;
 
                 svg > * {
-                    fill: #ffffff;
-                    stroke: #ffffff;
+                    fill: $mainIconColor_2;
+                    stroke: $mainIconColor_2;
                 }
             }
 
             button {
                 display: none;
-                position: absolute;
-                z-index: 5;
-                margin-top: 20%;
-                padding: 20px 10px 20px 20px;
-                transition: 0.3s scale;
                 background: transparent;
-                letter-spacing: 10px;
-                color: #ffffff;
+                color: $mainColor_1;
                 font-size: 24px;
                 font-weight: bold;
+                letter-spacing: 10px;
+                position: absolute;
+                transition: 0.3s scale;
                 animation: stop 3s linear 0s,btnJump 0.3s ease-out 3s;
+                z-index: 5;
+                padding: 20px 10px 20px 20px;
+                margin-top: 20%;
 
                 &:active {
                     transform: scale(0.9);
@@ -611,7 +377,7 @@ html {
 
                 p {
                     position: absolute;
-                    background: #ffffff;
+                    background: $mainBG_2;
 
                     &:nth-of-type(1) {
                         width: calc(100% + 8px);
@@ -648,24 +414,24 @@ html {
             }
             
             .loading {
-                position: absolute;
                 width: 100%;
                 height: 100%;
+                background: $BG;
+                position: absolute;
                 left: 0px;
                 top: 0px;
-                background: #0a102e;
-                z-index: 1000;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                z-index: 1000;
 
                 div {
-                    position: absolute;
+                    color: $loadingColor;
                     font-size: 30px;
+                    position: absolute;
                     opacity: 0;
                     animation: move 2s linear infinite;
                     transform: rotate(180deg);
-                    color: #35C4F0;
 
                     &:nth-child(2) {
                         animation-delay:0.2s;
@@ -702,248 +468,248 @@ particle {
     z-index: 100;
 }
 
-@media screen and(max-width: 1670px) {
-    html {
+// @media screen and (max-width: 1670px) {
+//     html {
         
-        body {
+//         body {
 
-            main {
+//             main {
 
-                .mainBox {
+//                 .mainBox {
 
-                    &.web {
+//                     &.web {
 
-                        .forWeb {
+//                         .forWeb {
     
-                            li {
-                                width: 22%;
-                                padding-bottom: 15%;
+//                             li {
+//                                 width: 22%;
+//                                 padding-bottom: 15%;
 
-                                h1 {
+//                                 h1 {
     
-                                    a {
-                                        width: 70px;
-                                        height: 70px;
+//                                     a {
+//                                         width: 70px;
+//                                         height: 70px;
                                         
-                                        i {
-                                            font-size: 36px;
-                                            line-height: 70px;
-                                        }
-                                    }
-                                }
-                            }
+//                                         i {
+//                                             font-size: 36px;
+//                                             line-height: 70px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
 
-                            s {
-                                width: 22%;
-                            }
-                        }
-                    }
+//                             s {
+//                                 width: 22%;
+//                             }
+//                         }
+//                     }
 
-                    &.mobile {
+//                     &.mobile {
 
-                        .forMobile {
+//                         .forMobile {
     
-                            li {
-                                width: 17%;
-                                padding-bottom: 33%;
-                            }
+//                             li {
+//                                 width: 17%;
+//                                 padding-bottom: 33%;
+//                             }
     
-                            s {
-                                width: 17%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//                             s {
+//                                 width: 17%;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media screen and(max-width: 1400px) {
-    html {
+// @media screen and (max-width: 1400px) {
+//     html {
         
-        body {
+//         body {
 
-            main {
+//             main {
 
-                .mainBox {
+//                 .mainBox {
 
-                    &.web {
+//                     &.web {
 
-                        .forWeb {
+//                         .forWeb {
 
-                            li {
-                                width: 28%;
-                                padding-bottom: 18%;
+//                             li {
+//                                 width: 28%;
+//                                 padding-bottom: 18%;
 
-                                h1 {
+//                                 h1 {
     
-                                    a {
-                                        width: 75px;
-                                        height: 75px;
+//                                     a {
+//                                         width: 75px;
+//                                         height: 75px;
                                         
-                                        i {
-                                            font-size: 36px;
-                                            line-height: 75px;
-                                        }
-                                    }
-                                }
-                            }
+//                                         i {
+//                                             font-size: 36px;
+//                                             line-height: 75px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
     
-                            s {
-                                width: 28%;
-                            }
-                        }
-                    }
+//                             s {
+//                                 width: 28%;
+//                             }
+//                         }
+//                     }
 
-                    &.mobile {
+//                     &.mobile {
 
-                        .forMobile {
+//                         .forMobile {
     
-                            li {
+//                             li {
     
-                                h1 {
+//                                 h1 {
     
-                                    a {
-                                        width: 70px;
-                                        height: 70px;
+//                                     a {
+//                                         width: 70px;
+//                                         height: 70px;
                                         
-                                        i {
-                                            font-size: 34px;
-                                            line-height: 70px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//                                         i {
+//                                             font-size: 34px;
+//                                             line-height: 70px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media screen and(max-width: 1290px) {
-    html {
+// @media screen and (max-width: 1290px) {
+//     html {
         
-        body {
+//         body {
 
-            main {
+//             main {
 
-                .mainBox {
+//                 .mainBox {
 
-                    &.web {
+//                     &.web {
 
-                        .forWeb {
+//                         .forWeb {
 
-                            li {
+//                             li {
 
-                                h1 {
+//                                 h1 {
     
-                                    a {
-                                        width: 65px;
-                                        height: 65px;
+//                                     a {
+//                                         width: 65px;
+//                                         height: 65px;
                                         
-                                        i {
-                                            font-size: 34px;
-                                            line-height: 65px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+//                                         i {
+//                                             font-size: 34px;
+//                                             line-height: 65px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
 
-                    &.mobile {
+//                     &.mobile {
 
-                        .forMobile {
+//                         .forMobile {
     
-                            li {
+//                             li {
     
-                                h1 {
+//                                 h1 {
     
-                                    a {
-                                        width: 65px;
-                                        height: 65px;
+//                                     a {
+//                                         width: 65px;
+//                                         height: 65px;
                                         
-                                        i {
-                                            font-size: 34px;
-                                            line-height: 65px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//                                         i {
+//                                             font-size: 34px;
+//                                             line-height: 65px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media screen and(max-width: 1120px) {
-    html {
+// @media screen and (max-width: 1120px) {
+//     html {
         
-        body {
+//         body {
 
-            .mainAnime {
+//             .mainAnime {
                 
-                .svgWrapper {
-                    width: 800px;
-                }
-            }
+//                 .svgWrapper {
+//                     width: 800px;
+//                 }
+//             }
 
-            main {
+//             main {
 
-                .mainBox {
+//                 .mainBox {
 
-                    &.web {
+//                     &.web {
 
-                        .forWeb {
-                            justify-content: center;
+//                         .forWeb {
+//                             justify-content: center;
 
-                            li {
-                                width: 40%;
-                                padding-bottom: 25%;
-                                margin: 0px 30px 50px;
+//                             li {
+//                                 width: 40%;
+//                                 padding-bottom: 25%;
+//                                 margin: 0px 30px 50px;
 
-                                h1 {
+//                                 h1 {
     
-                                    a {
-                                        width: 80px;
-                                        height: 80px;
+//                                     a {
+//                                         width: 80px;
+//                                         height: 80px;
                                         
-                                        i {
-                                            font-size: 40px;
-                                            line-height: 80px;
-                                        }
-                                    }
-                                }
-                            }
+//                                         i {
+//                                             font-size: 40px;
+//                                             line-height: 80px;
+//                                         }
+//                                     }
+//                                 }
+//                             }
     
-                            s {
-                                width: 40%;
-                                margin: 0px 30px;
-                            }
-                        }
-                    }
+//                             s {
+//                                 width: 40%;
+//                                 margin: 0px 30px;
+//                             }
+//                         }
+//                     }
 
-                    &.mobile {
+//                     &.mobile {
 
-                        .forMobile {
+//                         .forMobile {
     
-                            li {
-                                width: 21%;
-                                padding-bottom: 37%;
-                            }
+//                             li {
+//                                 width: 21%;
+//                                 padding-bottom: 37%;
+//                             }
 
-                            s {
-                                width: 21%;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//                             s {
+//                                 width: 21%;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

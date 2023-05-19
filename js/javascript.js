@@ -1,32 +1,32 @@
     //header按鈕
 
 $(function(){
-    $('header .inputBox').click(function(){
-        $(this).addClass('active');
-    })
-    $('header .inputBox input').blur(function(){
-        $('header .inputBox').removeClass('active');
-    })
-    var handle = null;
-	$('header .inputBox').mouseover(function(){
-		
-		clearTimeout(handle);
-	}).mouseout(function(){
-		handle = setTimeout(function(){
-			$('header .inputBox').removeClass('active');
-		},1500);
-	})
+  $('header .inputBox').click(function(){
+      $(this).addClass('active');
+  })
+  $('header .inputBox input').blur(function(){
+      $('header .inputBox').removeClass('active');
+  })
+  var handle = null;
+$('header .inputBox').mouseover(function(){
+  
+  clearTimeout(handle);
+}).mouseout(function(){
+  handle = setTimeout(function(){
+    $('header .inputBox').removeClass('active');
+  },1500);
+})
 
-    $('.webBtn').click(function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-        $('.mainBox').attr('class','mainBox web');
-    })
-    $('.mobileBtn').click(function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-        $('.mainBox').attr('class','mainBox mobile');
-    })
+  $('header .btnBox button').click(function(){
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+
+      var n = $(this).index();
+
+      $(".mainBox ul:eq("+ n +")")
+      .addClass("display")
+      .siblings().removeClass("display");
+  })
 })
 
     //mainBox左右拖曳滑動效果
@@ -70,71 +70,80 @@ $(function(){
     //自動抓取herf
 
 $(function(){
-    $('.img').each(function(index){
-        $('#web_demo'+index+' .img').css('background','url(./images/demoImg/web_demo'+index+'.jpg)');
-        $('#web_demo'+index+' .link').attr('href','./images/demoImg/web_demo'+index+'.jpg');
-        $('#mobile_demo'+index+' .img').css('background','url(./images/demoImg/mobile_demo'+index+'.jpg)');
-        $('#mobile_demo'+index+' .link').attr('href','./images/demoImg/mobile_demo'+index+'.jpg');
-        $('.img').css('background-size','cover');
-    })
-})
+  $(".mainBox .forWeb li").each(function(){
+      var n = $(this).index();
 
-    //假推flex
+      $(".mainBox .forWeb li:eq("+ n +") .img")
+      .css({
+          "background" : "url(./images/demoImg/web/web_demo"+ n +".jpg) top center",
+          "background-repeat" : "no-repeat",
+          "background-size" : "cover"
+      });
 
-$(function(){
-    var s = $('ul').children('s');
-    $('.forWeb .img').each(function(index){
-        $(s).clone().appendTo('ul');
-        $(s).clone().appendTo('.shoppingWindow');
-    })
+      $(".mainBox .forWeb li:eq("+ n +") .link")
+      .attr("href","./images/demoImg/web/web_demo"+ n +".jpg");
+
+      $(".mainBox .forWeb li:eq("+ n +") p")
+      .text("Demo_"+ (n + 1) +"");
+  })
+
+  $(".mainBox .forMobile li").each(function(){
+      var n = $(this).index();
+
+      $(".mainBox .forMobile li:eq("+ n +") .img")
+      .css({
+          "background" : "url(./images/demoImg/web/web_demo"+ n +".jpg) top center",
+          "background-repeat" : "no-repeat",
+          "background-size" : "cover"
+      });
+
+      $(".mainBox .forMobile li:eq("+ n +") .link")
+      .attr("href","./images/demoImg/web/web_demo"+ n +".jpg");
+
+      $(".mainBox .forMobile li:eq("+ n +") p")
+      .text("Demo_"+ (n + 1) +"");
+  })
 })
 
     //回到頂端按鈕
 
 $(function(){
-    $(window).scroll(function () {
-        var scrollVal = $(this).scrollTop();
-        if(scrollVal > 1){
-                $(".gotop").fadeIn('200');
-        } else{
-                $(".gotop").fadeOut('200');
-        };
-    })
-    $(".gotop").click(function(){
-        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
-        $body.delay('0').animate({
-                scrollTop:0
-        },500);
-    })
-})
+  $(".mainBox ul").scroll(function () {
+    var scrollVal = $(this).scrollTop();
+    if(scrollVal > 1){
+      $(".gotop")
+      .css({
+          "opacity" : "1",
+          "pointer-events" : "visible",
+      });
+    } else{
+      $(".gotop")
+      .css({
+          "opacity" : "0",
+          "pointer-events" : "none",
+      });
+    };
+  })
+  $(".gotop").click(function(){
 
-    //隱藏列達成條件
-
-$(function(){
-    $(window).scroll(function () {
-        var scrollVal = $(this).scrollTop();
-        if(scrollVal > 1){
-                $(".hideBar").addClass('display');
-                $('header').addClass('scroll');
-        } else{
-                $(".hideBar").removeClass('display');
-                $('header').removeClass('scroll');
-        };
-    })
+    $(".mainBox ul").animate({
+        scrollTop: 0,
+    },500);
+  })
 })
 
     //主物件hover時a跑版效果修正
 
 $(function(){
-    $('.forWeb li,.forMobile li').hover(function(){
-        $(this).addClass('hoverA');
-    })
-    var handle = null;
-    $('.forWeb li .link,.forMobile li .link').click(function(){
-        handle = setTimeout(function(){
-			$('.forWeb li,.forMobile li').removeClass('hoverA');
-		},500);
-    })
+  $('.forWeb li,.forMobile li').hover(function(){
+    $(this).addClass('hoverA');
+  })
+  var handle = null;
+  $('.forWeb li .link,.forMobile li .link').click(function(){
+    handle = setTimeout(function(){
+      $('.forWeb li,.forMobile li').removeClass('hoverA');
+    },500);
+  })
 })
 
     //transCover觸發
@@ -161,6 +170,22 @@ $(function(){
     if(isMobile()){
         $('header,main').css('min-width','0px');
     }
+})
+
+    //自動高
+
+$(function(){
+  var wH = $(window).innerHeight();
+
+  $(".mainBox ul")
+  .css("height",""+ (wH - 170) +"px");
+
+  $(window).resize(function(){
+    var wH = $(window).innerHeight();
+
+    $(".mainBox ul")
+    .css("height",""+ (wH - 170) +"px");
+  })
 })
 
 //以下為開場動畫特效
