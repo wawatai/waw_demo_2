@@ -595,6 +595,7 @@ html body .mainAnime figure {
   position: absolute;
   z-index: 3;
   pointer-events: none;
+  margin-bottom: 20px;
 }
 html body .mainAnime figure svg > * {
   fill: #ffffff;
