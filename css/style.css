@@ -584,42 +584,10 @@ html body .mainAnime #canvas {
   position: absolute;
   z-index: 2;
   pointer-events: none;
-  -webkit-animation: stop 4.5s linear 0s, ballJump 1s ease-out 4.5s;
-          animation: stop 4.5s linear 0s, ballJump 1s ease-out 4.5s;
+  -webkit-animation: stop 5.5s linear 0s, ballJump 1s ease-out 5.5s;
+          animation: stop 5.5s linear 0s, ballJump 1s ease-out 5.5s;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-}
-html body .mainAnime .flyDebris {
-  width: 1850px;
-  height: 1850px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  border-radius: 50%;
-  -webkit-animation: around2 4s ease-in 5.5s infinite;
-          animation: around2 4s ease-in 5.5s infinite;
-  -webkit-transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
-          transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
-  position: absolute;
-  z-index: 3;
-  pointer-events: none;
-}
-html body .mainAnime .flyDebris .innerBox {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-html body .mainAnime .flyDebris .innerBox span {
-  background: #ffffff;
-  -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5019607843);
-          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5019607843);
-  position: absolute;
-  -webkit-animation: innerRound 0s linear 0s infinite;
-          animation: innerRound 0s linear 0s infinite;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 html body .mainAnime figure {
   width: 80%;

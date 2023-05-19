@@ -310,35 +310,35 @@ html {
                 position: absolute;
                 z-index: 2;
                 pointer-events: none;
-                animation: stop 4.5s linear 0s,ballJump 1s ease-out 4.5s;
+                animation: stop 5.5s linear 0s,ballJump 1s ease-out 5.5s;
                 transition: 0.3s all;
             }
 
-            .flyDebris {
-                width: 1850px;
-                height: 1850px;
-                transform-style: preserve-3d;
-                border-radius: 50%;
-                animation: around2 4s ease-in 5.5s infinite;
-                transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
-                position: absolute;
-                z-index: 3;
-                pointer-events: none;
+            // .flyDebris {
+            //     width: 1850px;
+            //     height: 1850px;
+            //     transform-style: preserve-3d;
+            //     border-radius: 50%;
+            //     animation: around2 4s ease-in 5.5s infinite;
+            //     transform: rotateX(55deg) rotateY(-25deg) rotate(-90deg);
+            //     position: absolute;
+            //     z-index: 3;
+            //     pointer-events: none;
 
-                .innerBox {
-                    transform: rotate(45deg);
+            //     .innerBox {
+            //         transform: rotate(45deg);
 
-                    span {
-                        background: $mainBG_2;
-                        box-shadow: 0px 0px 10px $mainShadow_2;
-                        position: absolute;
-                        animation: innerRound 0s linear 0s infinite;
-                        animation-duration: 10s;
-                        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-                        transition: all 1s;
-                    }
-                }
-            }
+            //         span {
+            //             background: $mainBG_2;
+            //             box-shadow: 0px 0px 10px $mainShadow_2;
+            //             position: absolute;
+            //             animation: innerRound 0s linear 0s infinite;
+            //             animation-duration: 10s;
+            //             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            //             transition: all 1s;
+            //         }
+            //     }
+            // }
 
             figure {
                 width: 80%;
@@ -480,249 +480,3 @@ particle {
     background-size: contain;
     z-index: 100;
 }
-
-// @media screen and (max-width: 1670px) {
-//     html {
-        
-//         body {
-
-//             main {
-
-//                 .mainBox {
-
-//                     &.web {
-
-//                         .forWeb {
-    
-//                             li {
-//                                 width: 22%;
-//                                 padding-bottom: 15%;
-
-//                                 h1 {
-    
-//                                     a {
-//                                         width: 70px;
-//                                         height: 70px;
-                                        
-//                                         i {
-//                                             font-size: 36px;
-//                                             line-height: 70px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-
-//                             s {
-//                                 width: 22%;
-//                             }
-//                         }
-//                     }
-
-//                     &.mobile {
-
-//                         .forMobile {
-    
-//                             li {
-//                                 width: 17%;
-//                                 padding-bottom: 33%;
-//                             }
-    
-//                             s {
-//                                 width: 17%;
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 1400px) {
-//     html {
-        
-//         body {
-
-//             main {
-
-//                 .mainBox {
-
-//                     &.web {
-
-//                         .forWeb {
-
-//                             li {
-//                                 width: 28%;
-//                                 padding-bottom: 18%;
-
-//                                 h1 {
-    
-//                                     a {
-//                                         width: 75px;
-//                                         height: 75px;
-                                        
-//                                         i {
-//                                             font-size: 36px;
-//                                             line-height: 75px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-    
-//                             s {
-//                                 width: 28%;
-//                             }
-//                         }
-//                     }
-
-//                     &.mobile {
-
-//                         .forMobile {
-    
-//                             li {
-    
-//                                 h1 {
-    
-//                                     a {
-//                                         width: 70px;
-//                                         height: 70px;
-                                        
-//                                         i {
-//                                             font-size: 34px;
-//                                             line-height: 70px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 1290px) {
-//     html {
-        
-//         body {
-
-//             main {
-
-//                 .mainBox {
-
-//                     &.web {
-
-//                         .forWeb {
-
-//                             li {
-
-//                                 h1 {
-    
-//                                     a {
-//                                         width: 65px;
-//                                         height: 65px;
-                                        
-//                                         i {
-//                                             font-size: 34px;
-//                                             line-height: 65px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-
-//                     &.mobile {
-
-//                         .forMobile {
-    
-//                             li {
-    
-//                                 h1 {
-    
-//                                     a {
-//                                         width: 65px;
-//                                         height: 65px;
-                                        
-//                                         i {
-//                                             font-size: 34px;
-//                                             line-height: 65px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 1120px) {
-//     html {
-        
-//         body {
-
-//             .mainAnime {
-                
-//                 .svgWrapper {
-//                     width: 800px;
-//                 }
-//             }
-
-//             main {
-
-//                 .mainBox {
-
-//                     &.web {
-
-//                         .forWeb {
-//                             justify-content: center;
-
-//                             li {
-//                                 width: 40%;
-//                                 padding-bottom: 25%;
-//                                 margin: 0px 30px 50px;
-
-//                                 h1 {
-    
-//                                     a {
-//                                         width: 80px;
-//                                         height: 80px;
-                                        
-//                                         i {
-//                                             font-size: 40px;
-//                                             line-height: 80px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-    
-//                             s {
-//                                 width: 40%;
-//                                 margin: 0px 30px;
-//                             }
-//                         }
-//                     }
-
-//                     &.mobile {
-
-//                         .forMobile {
-    
-//                             li {
-//                                 width: 21%;
-//                                 padding-bottom: 37%;
-//                             }
-
-//                             s {
-//                                 width: 21%;
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

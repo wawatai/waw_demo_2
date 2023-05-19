@@ -227,7 +227,7 @@ $(function(){
     var tmax_optionsGlobal = {
         repeat: 0,
         repeatDelay: 0,
-        delay: 4.5
+        delay: 2
     };
       
     CSSPlugin.useSVGTransformAttr = true;
