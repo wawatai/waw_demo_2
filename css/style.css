@@ -366,8 +366,8 @@ html body main .mainBox ul.forWeb li h1 a:nth-of-type(2) {
   right: 5%;
 }
 html body main .mainBox ul.forMobile {
-  -ms-grid-columns: (1fr)[6];
-  grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[5];
+  grid-template-columns: repeat(5, 1fr);
 }
 html body main .mainBox ul.forMobile li {
   padding-bottom: 175%;
@@ -425,7 +425,8 @@ html body main .mainBox ul li:hover .img::before, html body main .mainBox ul li:
 }
 html body main .mainBox ul li:hover h1, html body main .mainBox ul li:active h1, html body main .mainBox ul li.active h1 {
   width: 110%;
-  background: #f2cd37;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(16%, #ed47f3), color-stop(60%, #8a5efa), color-stop(96%, #15bde7));
+  background: linear-gradient(to top, #ed47f3 16%, #8a5efa 60%, #15bde7 96%);
   border-radius: 100% 100% 0% 0%;
 }
 html body main .mainBox ul li:hover h1 p, html body main .mainBox ul li:active h1 p, html body main .mainBox ul li.active h1 p {
@@ -462,7 +463,8 @@ html body main .mainBox ul li .img::before {
 html body main .mainBox ul li h1 {
   width: 100%;
   bottom: 0px;
-  background: #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4C6FD3), to(#313C87));
+  background: linear-gradient(to bottom, #4C6FD3 0%, #313C87 100%);
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -472,7 +474,7 @@ html body main .mainBox ul li h1 {
   overflow: hidden;
 }
 html body main .mainBox ul li h1 p {
-  color: #33853b;
+  color: #ffffff;
   font-size: 18px;
   font-weight: bold;
   position: absolute;
@@ -514,7 +516,7 @@ html body main .mainBox ul li h1 a:hover i, html body main .mainBox ul li h1 a:a
           animation: shakeI 1s linear 0s infinite;
 }
 html body main .mainBox ul li h1 a i {
-  color: #33853b;
+  color: #374183;
   font-size: 40px;
 }
 html body main .gotop {
