@@ -178,13 +178,13 @@ $(function(){
   var wH = $(window).innerHeight();
 
   $(".mainBox ul")
-  .css("height",""+ (wH - 170) +"px");
+  .css("height",""+ (wH - 110) +"px");
 
   $(window).resize(function(){
     var wH = $(window).innerHeight();
 
     $(".mainBox ul")
-    .css("height",""+ (wH - 170) +"px");
+    .css("height",""+ (wH - 110) +"px");
   })
 })
 

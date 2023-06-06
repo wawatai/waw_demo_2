@@ -19,13 +19,14 @@ html {
             .mainBox {
                 width: 90%;
                 height: 100%;
-                padding-top: 120px;
+                padding-top: 95px;
                 margin: 0px auto;
 
                 ul {
                     display: none;
                     width: auto;
                     height: auto;
+                    align-content: flex-start;
                     gap: 50px 25px;
                     overflow-y: auto;
                     padding: 0 10px;
