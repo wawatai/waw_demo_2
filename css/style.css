@@ -463,7 +463,7 @@ html body main .mainBox ul li .img::before {
   transition: 0.3s all;
 }
 html body main .mainBox ul li h1 {
-  width: 100%;
+  width: 110%;
   bottom: 0px;
   background: -webkit-gradient(linear, left top, left bottom, from(#4C6FD3), to(#313C87));
   background: linear-gradient(to bottom, #4C6FD3 0%, #313C87 100%);
